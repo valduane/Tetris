@@ -10,7 +10,6 @@ public class Blocks : MonoBehaviour
     public AudioClip BreakSound;
     static public float toFall = 1f;
     float n = 0.1f;
-	
     void Start()
     {
         if (!isDontCollide())
