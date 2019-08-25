@@ -9,6 +9,7 @@ public class Boundaries : MonoBehaviour
     public static int h = 20;
     public static Transform[,] grid = new Transform[w, h];
     static int score = 0;
+    static int numb = 20;
     [SerializeField] TextMeshProUGUI scoreText;
     
 
@@ -81,7 +82,21 @@ public class Boundaries : MonoBehaviour
                 above(y + 1);
                 --y;
                 score += 20;
+                Blocks.toFall -= 0.05f;
             }
         }
+    }
+
+   static public bool SpeedOfGame()
+    {
+        bool speedStat = false;
+        if (score > numb)
+        {
+            numb = numb + 100;
+            return (speedStat = true);
+            Debug.Log(numb);
+        }
+        else
+            return (speedStat = false);
     }
 }
